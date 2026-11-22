@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>forplex-infostudio — студия анимации</title>
+  <meta name="description" content="forplex-infostudio — творческая студия анимации: придумываем персонажей и создаём мультфильмы.">
+  <meta name="theme-color" content="#0b0716">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0716; --card:#151028; --line:#2a2150; --ink:#f3efff; --mut:#a99fd1;
+      --pink:#ff4fa3; --cyan:#35e0ff; --yellow:#ffd23f;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Manrope",system-ui,"Segoe UI",sans-serif;overflow-x:hidden}
+    a{color:inherit}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+    /* Шапка */
+    header{position:relative;padding:22px 0 90px;overflow:hidden;
+      background:radial-gradient(700px 380px at 85% -10%,#4b1c8f66,transparent),
+                 radial-gradient(600px 360px at 0% 30%,#ff4fa328,transparent)}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .mini{font:800 .95rem "Unbounded",sans-serif;letter-spacing:-.5px}
+    .mini span{color:var(--pink)}
+    nav a.link{color:var(--mut);text-decoration:none;margin-left:20px;font-weight:500}
+    nav a.link:hover{color:var(--cyan)}
+    .hero{padding-top:72px;text-align:left}
+    .hero small{color:var(--cyan);font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+    h1{font:800 clamp(2rem,8.2vw,5.2rem)/1.05 "Unbounded",sans-serif;letter-spacing:-.04em;margin:14px 0 18px;overflow-wrap:anywhere}
+    h1 .a{color:var(--pink)} h1 .b{background:linear-gradient(90deg,var(--cyan),var(--yellow));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:560px;color:var(--mut);font-size:1.12rem;margin:0 0 28px}
+    .btn{display:inline-block;padding:14px 26px;border-radius:99px;font-weight:700;text-decoration:none;color:#14092b;
+      background:linear-gradient(90deg,var(--pink),var(--yellow));transition:transform .2s}
+    .btn:hover{transform:translateY(-3px)}
+    .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.9;animation:float 7s ease-in-out infinite}
+    .b1{width:90px;height:90px;right:9%;top:150px;background:var(--cyan)}
+    .b2{width:46px;height:46px;right:24%;top:300px;background:var(--pink);animation-delay:-2s}
+    .b3{width:28px;height:28px;right:5%;top:360px;background:var(--yellow);animation-delay:-4s}
+    @keyframes float{50%{transform:translateY(-22px)}}
+
+    /* Разделы */
+    section{padding:70px 0}
+    h2{font:800 clamp(1.5rem,5vw,2.3rem) "Unbounded",sans-serif;letter-spacing:-.03em;margin:0 0 22px}
+    h2::after{content:"";display:block;width:64px;height:5px;border-radius:9px;margin-top:12px;background:linear-gradient(90deg,var(--pink),var(--cyan))}
+    .about p{max-width:720px;color:#d8d1f3;margin:0 0 16px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:30px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+    .card i{font-style:normal;font-size:1.9rem;display:block;margin-bottom:8px}
+    .card h3{margin:0 0 6px;font:500 1.02rem "Unbounded",sans-serif}
+    .card p{margin:0;color:var(--mut);font-size:.96rem}
+
+    /* Плашка «Скоро» */
+    .soon{position:relative;text-align:center;padding:56px 24px;border-radius:28px;border:2px dashed #5b3fc0;
+      background:linear-gradient(135deg,#1a1038,#1d0f33);overflow:hidden}
+    .soon::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent,#ff4fa322,transparent,#35e0ff22,transparent);animation:spin 14s linear infinite}
+    .soon>*{position:relative}
+    .soon .ico{font-size:3rem;display:block;margin-bottom:10px}
+    .soon p{margin:0;font:500 clamp(1.1rem,3.6vw,1.6rem)/1.4 "Unbounded",sans-serif}
+    .soon small{display:block;margin-top:12px;color:var(--mut)}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Подвал */
+    footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--mut)}
+    footer b{color:var(--ink);font-family:"Unbounded",sans-serif;font-weight:500}
+
+    @media (max-width:560px){nav a.link{margin-left:12px}.blob{display:none}header{padding-bottom:60px}.hero{padding-top:48px}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="wrap">
+      <nav>
+        <div class="mini">forplex<span>-</span>infostudio</div>
+        <div><a class="link" href="#about">О студии</a><a class="link" href="#cartoons">Мультфильмы</a></div>
+      </nav>
+      <div class="hero">
+        <small>Студия анимации</small>
+        <h1><span class="a">forplex-</span><span class="b">infostudio</span></h1>
+        <p>Придумываем героев, оживляем их и рассказываем истории, которые хочется смотреть снова и снова.</p>
+        <a class="btn" href="#cartoons">Смотреть мультфильмы</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <div class="wrap">
+        <h2>О студии</h2>
+        <p>forplex-infostudio — это творческая студия анимации. Мы придумываем персонажей с настоящим характером и создаём из них мультфильмы: от первого наброска на бумаге до готовой истории на экране.</p>
+        <p>Для нас анимация — это способ рассказать яркую, добрую и смешную историю так, чтобы её было интересно смотреть и детям, и взрослым.</p>
+        <div class="cards">
+          <div class="card"><i>✏️</i><h3>Персонажи</h3><p>Придумываем героев, их внешность, характер и голос.</p></div>
+          <div class="card"><i>🎬</i><h3>Мультфильмы</h3><p>Складываем идеи в сюжеты и оживляем их кадр за кадром.</p></div>
+          <div class="card"><i>🎨</i><h3>Свой стиль</h3><p>Яркие краски, живые движения и много фантазии.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cartoons">
+      <div class="wrap">
+        <h2>Наши мультфильмы</h2>
+        <div class="soon">
+          <span class="ico">🎞️</span>
+          <p>Скоро здесь появятся наши первые мультики…</p>
+          <small>Загляните позже — мы уже работаем над ними.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><b>forplex-infostudio</b> · 2026</div>
+  </footer>
+</body>
+</html>
